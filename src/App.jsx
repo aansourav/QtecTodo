@@ -1,6 +1,7 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
+import TodoFooter from "./components/TodoFooter";
 import TodoHeader from "./components/TodoHeader";
 import TodoList from "./components/TodoList";
 
@@ -17,6 +18,7 @@ function App() {
         <hr className="mt-4" />
         <TodoList />
         <hr className="mt-4" />
+        <TodoFooter />
       </div>
 
       {/* -----Todo Section End------ */}
