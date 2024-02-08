@@ -13,7 +13,7 @@ function App() {
 
       {/* -----Todo Section Start----- */}
 
-      <div className="w-full max-w-3xl shadow-lg rounded-lg p-6 bg-white mx-auto">
+      <div className="sm:w-full max-w-3xl shadow-xl rounded-lg p-6  bg-white mx-6 sm:mx-auto">
         <TodoHeader />
         <hr className="mt-4" />
         <TodoList />
