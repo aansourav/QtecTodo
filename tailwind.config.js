@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         sans: ["Noto Sans HK", "sans-serif"],
       },
+      container: {
+        center: true,
+      },
     },
   },
   plugins: [],
