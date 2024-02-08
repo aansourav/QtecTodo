@@ -2,6 +2,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import TodoHeader from "./components/TodoHeader";
+import TodoList from "./components/TodoList";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
 
       <div className="w-full max-w-3xl shadow-lg rounded-lg p-6 bg-white mx-auto">
         <TodoHeader />
+        <hr className="mt-4" />
+        <TodoList />
         <hr className="mt-4" />
       </div>
 
