@@ -1,5 +1,7 @@
 import { useDispatch } from "react-redux";
 import cancelIcon from "../assets/images/cancel.png";
+import editIcon from "../assets/images/edit.png";
+
 import { colorSelected, deleted, toggled } from "../redux/todos/actions";
 
 const Todo = ({ todo }) => {
@@ -37,8 +39,10 @@ const Todo = ({ todo }) => {
           </svg>
         )}
       </div>
-
-      <div className={`select-none flex-1 ${completed && "line-through"}`}>{text}</div>
+      <div className={`select-none flex-1 flex items-center ${completed && "line-through"}`}>
+        {text}
+        <img className="ml-3 w-4 h-4" src={editIcon} alt="" />
+      </div>
 
       <div
         className={`flex-shrink-0 h-4 w-4 rounded-full border-2 ml-auto cursor-pointer hover:bg-green-500 border-green-500 ${
