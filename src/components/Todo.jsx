@@ -1,26 +1,25 @@
 import { useDispatch } from "react-redux";
 import cancelIcon from "../assets/images/cancel.png";
-import editIcon from "../assets/images/edit.png";
 import deleteTodo from "../redux/todos/thunk/deleteTodo";
 import updateColor from "../redux/todos/thunk/updateColor";
 import updateStatus from "../redux/todos/thunk/updateStatus";
 
-const Todo = ({ todo, handleEdit }) => {
-    const dispatch = useDispatch();
+const Todo = ({ todo }) => {
+  const dispatch = useDispatch();
 
-    const { text, id, completed, color } = todo;
+  const { text, id, completed, color } = todo;
 
-    const handleStatusChange = (todoId) => {
-      dispatch(updateStatus(todoId, completed));
-    };
+  const handleStatusChange = (todoId) => {
+    dispatch(updateStatus(todoId, completed));
+  };
 
-    const handleColorChange = (todoId, color) => {
-      dispatch(updateColor(todoId, color));
-    };
+  const handleColorChange = (todoId, color) => {
+    dispatch(updateColor(todoId, color));
+  };
 
-    const handleDelete = (todoId) => {
-      dispatch(deleteTodo(todoId));
-    };
+  const handleDelete = (todoId) => {
+    dispatch(deleteTodo(todoId));
+  };
   return (
     <div className="flex justify-start items-center p-2 hover:bg-gray-100 hover:transition-all space-x-4 border-b border-gray-400/20 last:border-0">
       <div
@@ -41,10 +40,7 @@ const Todo = ({ todo, handleEdit }) => {
         )}
       </div>
 
-      <div className={`select-none flex-1 flex items-center ${completed && "line-through"}`}>
-        {text}
-        <img className="ml-3 w-4 h-4" src={editIcon} alt="" onClick={() => handleEdit(todo)} />
-      </div>
+      <div className={`select-none flex-1 flex items-center ${completed && "line-through"}`}> {text}</div>
 
       <div
         className={`flex-shrink-0 h-4 w-4 rounded-full border-2 ml-auto cursor-pointer hover:bg-green-500 border-green-500 ${

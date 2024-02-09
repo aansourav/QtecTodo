@@ -12,18 +12,24 @@ const fetchTodos = async (dispatch) => {
     todos = [
       {
         id: 1,
-        text: "Learn React JS",
+        text: "Making Todo App for Qtec",
         completed: true,
       },
       {
         id: 2,
-        text: "Learn Redux",
+        text: "Writing Readme File for Todo App",
         completed: false,
         color: "red",
       },
       {
         id: 3,
-        text: "Make Todo for Qtec",
+        text: "Deploying Todo App",
+        completed: false,
+        color: "red",
+      },
+      {
+        id: 4,
+        text: "Sending Email to Qtec",
         completed: false,
         color: "red",
       },

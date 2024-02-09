@@ -23,10 +23,6 @@ function App() {
     }
   };
 
-  const handleEdit = (todo) => {
-    setInput(todo.text);
-  };
-
   return (
     <div>
       <Header />
@@ -37,7 +33,7 @@ function App() {
       <div className="sm:w-full max-w-3xl shadow-xl rounded-lg p-6  bg-white mx-6 sm:mx-auto">
         <TodoHeader handleInput={handleInput} submitHandler={submitHandler} input={input} />
         <hr className="mt-4" />
-        <TodoList handleEdit={handleEdit} />
+        <TodoList/>
         <hr className="mt-4" />
         <TodoFooter />
       </div>
