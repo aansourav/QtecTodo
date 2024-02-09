@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import Todo from "./Todo";
 
-const TodoList = () => {
+const TodoList = ({ handleEdit }) => {
   const todos = useSelector((state) => state.todos);
   const filters = useSelector((state) => state.filters);
 
@@ -33,7 +33,7 @@ const TodoList = () => {
         .filter(filterByStatus)
         .filter(filterByColors)
         .map((todo) => (
-          <Todo todo={todo} key={todo.id} />
+          <Todo todo={todo} key={todo.id} handleEdit={handleEdit} />
         ))}
     </div>
   );

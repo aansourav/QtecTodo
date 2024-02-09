@@ -1,34 +1,52 @@
-import { Provider } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import TodoFooter from "./components/TodoFooter";
 import TodoHeader from "./components/TodoHeader";
 import TodoList from "./components/TodoList";
-import store from "./redux/store";
+import { added } from "./redux/todos/actions";
 
 function App() {
+  const [input, setInput] = useState("");
+  const dispatch = useDispatch();
+
+  const handleInput = (inputText) => {
+    console.log(inputText);
+    setInput(inputText);
+  };
+
+  const submitHandler = (input) => {
+    if (input) {
+      dispatch(added(input));
+      setInput("");
+    }
+  };
+
+  const handleEdit = (todo) => {
+    setInput(todo.text);
+  };
+
   return (
-    <Provider store={store}>
-      <div>
-        <Header />
-        <HeroSection />
+    <div>
+      <Header />
+      <HeroSection />
 
-        {/* -----Todo Section Start----- */}
+      {/* -----Todo Section Start----- */}
 
-        <div className="sm:w-full max-w-3xl shadow-xl rounded-lg p-6  bg-white mx-6 sm:mx-auto">
-          <TodoHeader />
-          <hr className="mt-4" />
-          <TodoList />
-          <hr className="mt-4" />
-          <TodoFooter />
-        </div>
-
-        {/* -----Todo Section End------ */}
-
-        <Footer />
+      <div className="sm:w-full max-w-3xl shadow-xl rounded-lg p-6  bg-white mx-6 sm:mx-auto">
+        <TodoHeader handleInput={handleInput} submitHandler={submitHandler} input={input} />
+        <hr className="mt-4" />
+        <TodoList handleEdit={handleEdit} />
+        <hr className="mt-4" />
+        <TodoFooter />
       </div>
-    </Provider>
+
+      {/* -----Todo Section End------ */}
+
+      <Footer />
+    </div>
   );
 }
 

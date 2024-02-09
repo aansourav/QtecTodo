@@ -4,7 +4,7 @@ import editIcon from "../assets/images/edit.png";
 
 import { colorSelected, deleted, toggled } from "../redux/todos/actions";
 
-const Todo = ({ todo }) => {
+const Todo = ({ todo, handleEdit }) => {
   const dispatch = useDispatch();
 
   const { text, id, completed, color } = todo;
@@ -41,7 +41,7 @@ const Todo = ({ todo }) => {
       </div>
       <div className={`select-none flex-1 flex items-center ${completed && "line-through"}`}>
         {text}
-        <img className="ml-3 w-4 h-4" src={editIcon} alt="" />
+        <img className="ml-3 w-4 h-4" src={editIcon} alt="" onClick={() => handleEdit(todo)} />
       </div>
 
       <div

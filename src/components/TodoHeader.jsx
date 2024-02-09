@@ -1,25 +1,12 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { useDispatch } from "react-redux";
 import doubleTickIcon from "../assets/images/double-tick.png";
 import noteIcon from "../assets/images/notes.png";
 import plusIcon from "../assets/images/plus.png";
-import { added, allCompleted, clearCompleted } from "../redux/todos/actions";
+import { allCompleted, clearCompleted } from "../redux/todos/actions";
 
-const TodoHeader = () => {
+const TodoHeader = ({ input, handleInput, submitHandler }) => {
   const dispatch = useDispatch();
-  const [input, setInput] = useState("");
-
-  const handleInput = (e) => {
-    setInput(e.target.value);
-  };
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-    if (input) {
-      dispatch(added(input));
-      setInput("");
-    }
-  };
 
   const completeHadler = () => {
     dispatch(allCompleted());
@@ -30,14 +17,23 @@ const TodoHeader = () => {
   };
   return (
     <div>
-      <form className="flex items-center bg-gray-100 px-4 py-4 rounded-md" onSubmit={submitHandler}>
+      <form
+        className="flex items-center bg-gray-100 px-4 py-4 rounded-md"
+        onSubmit={(e) => {
+          e.preventDefault();
+          submitHandler(input);
+        }}
+      >
         <img src={noteIcon} className="w-6 h-6" alt="Add todo" />
         <input
           type="text"
           placeholder="Type your todo"
           className="w-full text-lg px-4 py-1 border-none outline-none bg-gray-100 text-gray-500"
           value={input}
-          onChange={handleInput}
+          onChange={(e) => {
+            e.preventDefault();
+            handleInput(e.target.value);
+          }}
         />
         <button type="submit">
           <img src={plusIcon} className="w-[28px] h-[28px]" alt="Add todo" />
