@@ -1,6 +1,9 @@
 # QtecTodo - An Efficient Todo List App
 Welcome to my QtecTodo application! This application is designed to help you manage your tasks efficiently, allowing you to add, edit, mark as completed, and delete tasks with ease. With additional features such as task priorities and local storage integration, we aim to provide a seamless task management experience.
 
+### Live Site -> https://qtectodo.netlify.app
+**NB:** ***For Better Experience Please Clone & Run on Your Own PC. Don't Judge by Live Site***
+
 ![alt text](image.png)
 
 ## Features
