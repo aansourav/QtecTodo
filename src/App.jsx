@@ -6,20 +6,19 @@ import HeroSection from "./components/HeroSection";
 import TodoFooter from "./components/TodoFooter";
 import TodoHeader from "./components/TodoHeader";
 import TodoList from "./components/TodoList";
-import { added } from "./redux/todos/actions";
+import addTodo from "./redux/todos/thunk/addTodo";
 
 function App() {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
 
   const handleInput = (inputText) => {
-    console.log(inputText);
     setInput(inputText);
   };
 
   const submitHandler = (input) => {
     if (input) {
-      dispatch(added(input));
+      dispatch(addTodo(input));
       setInput("");
     }
   };

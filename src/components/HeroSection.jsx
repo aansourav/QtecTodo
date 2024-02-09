@@ -13,7 +13,7 @@ const HeroSection = () => {
             />
           </div>
           <div>
-            <h1 className="mb-1.5 text-[56px] text-center sm:text-left font-bold leading-none text-[#F5BF42] lg:text-[73px]">
+            <h1 className="font-roboto mb-1.5 text-[56px] text-center sm:text-left font-bold leading-none text-[#F5BF42] lg:text-[73px]">
               QtecTodo
             </h1>
             <p className="text-lg my-8 opacity-60">
